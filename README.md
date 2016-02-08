@@ -18,7 +18,7 @@ docker run -it manzolo/docker-symfony3 /bin/bash
 ```bash
 docker run -d -p 8080:80 -p 33060:3306 manzolo/docker-symfony3
 ```
-##test
+##Navigate to
 ```
-symfony3demo.localhost:8080
+http://symfony3demo.localhost:8080
 ```
