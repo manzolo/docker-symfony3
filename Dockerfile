@@ -75,9 +75,9 @@ RUN mkdir -p /src/php && cd /src/php && symfony new symfony3demo 3.0
 RUN cd /src/php/symfony3demo && rm -rf var/cache/* var/logs/* var/sessions/*
 RUN cd /src/php/symfony3demo; composer update
 
-#RUN cd /src/php/symfony3demo && rm -rf var/cache/* var/logs/* var/sessions/* && chmod a+rwx var/cache var/logs var/sessions var/cache/dev && rm -rf var/cache/dev/* && rm -rf var/sessions/dev/* 
-ENV HTTPDUSER www-data
-RUN cd /src/php/symfony3demo && setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var && setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
+RUN cd /src/php/symfony3demo && rm -rf var/cache/* var/logs/* var/sessions/* && chmod a+rwx var/cache var/logs var/sessions var/cache/dev && rm -rf var/cache/dev/* && rm -rf var/sessions/dev/* 
+#ENV HTTPDUSER www-data
+#RUN cd /src/php/symfony3demo && setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var && setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
 
 #Uncomment to show app_dev.php
 #RUN sed -i "s#header('HTTP/1.0 403 Forbidden');#\//header('HTTP/1.0 403 Forbidden');#g" /src/php/symfony3demo/web/app_dev.php
